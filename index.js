@@ -1,4 +1,4 @@
-import { expenseTracker } from "./router/expense.tracker";
+import { expenseTracker } from "./router/expense.router";
 import express from "express";
 
 const app = express();
@@ -8,7 +8,7 @@ app.use(express.json());
 
 const port = 5050;
 
-app.use("/exptrack", expTrackRouter);
+app.use("/exptrack", expenseTracker);
 
 app.listen(port, () => {
   console.log(`server running at a http://localhost:${port}/`);
