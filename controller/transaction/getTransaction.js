@@ -1,11 +1,11 @@
 import { response } from "express";
 import { sql } from "../../database/index";
 
-export const getUsers = async (request, response) => {
+export const getTransaction = async (request, response) => {
   try {
-    const category = await sql`SELECT * FROM users`;
+    const transaction = await sql`SELECT * FROM transaction`;
     console.log("j");
-    response.status(200).json({ messege: "success", category });
+    response.status(200).json({ message: "success", transaction });
   } catch (error) {
     // console.log(error);
     response.status(400).json({ message: "bad request" });
