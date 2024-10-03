@@ -7,8 +7,7 @@ export const deleteUsers = async (request, response) => {
   });
   try {
     await sql`DELETE FROM users
-    WHERE id=${id}
-    `;
+    WHERE id=${id}`;
   } catch (error) {
     console.log(error);
     response.status(400).json({ messege: "bad request" });

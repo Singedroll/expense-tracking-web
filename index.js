@@ -5,8 +5,10 @@ const app = express();
 import { sql } from "./database";
 import { userRouter } from "./router/users.router";
 import { transactionRouter } from "./router/transaction.router";
+import cors from "cors";
 
 app.use(express.json());
+app.use(cors());
 
 const port = 5050;
 

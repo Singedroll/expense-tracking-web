@@ -7,8 +7,7 @@ export const deleteCategory = async (request, response) => {
   });
   try {
     await sql`DELETE FROM category
-    WHERE id=${id}
-    `;
+    WHERE id=${id}`;
   } catch (error) {
     console.log(error);
     response.status(400).json({ messege: "bad request" });

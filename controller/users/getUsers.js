@@ -4,7 +4,6 @@ import { sql } from "../../database/index";
 export const getUsers = async (request, response) => {
   try {
     const category = await sql`SELECT * FROM users`;
-    console.log("j");
     response.status(200).json({ messege: "success", category });
   } catch (error) {
     // console.log(error);
