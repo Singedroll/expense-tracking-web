@@ -1,12 +1,10 @@
 import { categoryRouter } from "./router/category.router";
 import express from "express";
-
-const app = express();
-import { sql } from "./database";
 import { userRouter } from "./router/users.router";
 import { transactionRouter } from "./router/transaction.router";
 import cors from "cors";
 
+const app = express();
 app.use(express.json());
 app.use(cors());
 
