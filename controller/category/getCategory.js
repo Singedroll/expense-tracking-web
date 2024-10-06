@@ -1,10 +1,10 @@
 import { response } from "express";
 import { sql } from "../../database/index";
 
-export const getUsers = async (request, response) => {
+export const getCategory = async (request, response) => {
   try {
-    const category = await sql`SELECT * FROM users`;
-    response.status(200).json({ messege: "success", category });
+    const category = await sql`SELECT * FROM category`;
+    response.status(200).json({ message: category });
   } catch (error) {
     // console.log(error);
     response.status(400).json({ message: "bad request" });
