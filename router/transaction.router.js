@@ -7,4 +7,4 @@ export const transactionRouter = express.Router();
 
 transactionRouter.get("/", getTransaction);
 transactionRouter.post("/", addTransaction);
-transactionRouter.get("/transactionid", addTransactionById);
+transactionRouter.post("/transactionid", addTransactionById);

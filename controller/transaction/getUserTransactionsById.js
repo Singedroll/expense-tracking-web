@@ -3,7 +3,8 @@ import { sql } from "../../database/index";
 export const addTransactionById = async (request, response) => {
   const { userid } = request.body;
   try {
-    const getUserTrans = await sql`SELECT *
+    const getUserTrans =
+      await sql`SELECT users.name as "userName", category.name as "categoryName", *
     FROM transaction
     INNER JOIN category ON transaction.category_id = category.id
     INNER JOIN users ON transaction.user_id = users.id

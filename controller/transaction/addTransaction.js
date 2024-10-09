@@ -11,6 +11,8 @@ export const addTransaction = async (request, response) => {
     currency_type,
   } = request.body;
 
+  console.log(request.body);
+
   try {
     await sql`INSERT INTO transaction (name, amount, transaction_type, description, user_id, category_id, currency_type)
       VALUES (${name},${amount},${transaction_type},${description},${user_id},${category_id},${currency_type})`;
