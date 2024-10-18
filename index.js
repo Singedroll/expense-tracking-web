@@ -15,5 +15,5 @@ app.use("/user", userRouter);
 app.use("/transaction", transactionRouter);
 
 app.listen(port, () => {
-  console.log(`server running at a http://localhost:${port}/`);
+  console.log(`server running at a http://localhost:${port}`);
 });

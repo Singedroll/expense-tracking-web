@@ -3,7 +3,6 @@ import { sql } from "../../database/index";
 
 export const addUsers = async (request, response) => {
   const { email, name, password, avatar_img } = request.body;
-  console.log(request.body);
 
   try {
     await sql`INSERT INTO users (name, email, password, avatar_img)

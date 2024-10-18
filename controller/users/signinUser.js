@@ -9,6 +9,7 @@ export const signInUser = async (request, response) => {
       WHERE email = ${email} AND password = ${password}`;
     if (user[0]) {
       response.status(200).json({ myuser: user[0] });
+      return;
     }
     response.status(400).json({ message: "user not found" });
   } catch (error) {
