@@ -2,6 +2,7 @@ import { sql } from "../../database/index";
 
 export const addTransactionById = async (request, response) => {
   const { userid } = request.body;
+  console.log(request.body);
   try {
     const getUserTrans =
       await sql`SELECT users.name as "userName", category.name as "categoryName", *
@@ -14,5 +15,16 @@ export const addTransactionById = async (request, response) => {
   } catch (error) {
     console.error("Error adding transaction:", error);
     response.status(400).json({ message: "Bad request", error });
+  }
+};
+
+export const getSum = async (request, response) => {
+  const { userid, type } = request.body;
+  try {
+    const sum = await sql`SELECT SUM(amount) from transaction
+          where transaction_type = ${type} AND user_id = ${userid}`;
+    response.status(200).json(sum);
+  } catch (error) {
+    response.status(400).json(error);
   }
 };
